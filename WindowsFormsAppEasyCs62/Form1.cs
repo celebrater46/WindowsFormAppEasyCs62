@@ -38,11 +38,24 @@ namespace WindowsFormsAppEasyCs62
             label.Parent = this;
 
             button.Click += new EventHandler(ClickButton);
+
+            this.MouseEnter += new EventHandler(FormEnterMouse);
+            this.MouseLeave += new EventHandler(FormLeaveMouse);
         }
 
         public void ClickButton(Object sender, EventArgs e)
         {
             label.Text = "Thank You.";
+        }
+
+        public void FormEnterMouse(Object sender, EventArgs e)
+        {
+            label.Text = "Hello.";
+        }
+
+        public void FormLeaveMouse(Object sender, EventArgs e)
+        {
+            label.Text = "Bye.";
         }
     }
 }
